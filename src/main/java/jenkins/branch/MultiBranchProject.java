@@ -1060,6 +1060,15 @@ public abstract class MultiBranchProject<P extends Job<P, R> & TopLevelItem,
         return new BranchIndexing<>(this, (BranchIndexing) previous);
     }
 
+    public boolean hasVisibleItems() {
+        for (P item : items.values()) {
+            if (item.hasPermission(Item.READ)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Inverse function of {@link Util#rawEncode(String)}
      *
