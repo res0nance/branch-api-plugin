@@ -93,7 +93,7 @@ public class MultiBranchProjectViewHolder extends AbstractFolderViewHolder {
      */
     @NonNull
     @Override
-    public synchronized List<View> getViews() {
+    public List<View> getViews() {
         if (!owner.hasVisibleItems()) {
             // when there are no branches nor pull requests to show, switch to the special welcome view
             return Collections.singletonList(owner.getWelcomeView());
