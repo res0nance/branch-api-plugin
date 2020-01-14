@@ -74,7 +74,7 @@ public class OrganizationFolderViewHolder extends AbstractFolderViewHolder {
      * The primary view name.
      */
     @SuppressFBWarnings(value = "IS2_INCONSISTENT_SYNC", justification = "Only need to synchronize initialization")
-    private transient String primaryView = null;
+    private transient volatile String primaryView = null;
 
     /**
      * Constructor.
